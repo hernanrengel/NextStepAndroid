@@ -39,9 +39,9 @@ public class PerfilFragment  extends Fragment {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
 
-
-
         dataBase = new DataBase(getActivity());
+
+        itemPerfils = new ArrayList<>();
 
     }
 
@@ -53,24 +53,30 @@ public class PerfilFragment  extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_sugeridas, container, false);
+        View view = inflater.inflate(R.layout.fragment_perfil, container, false);
 
-        listView = (ListView) view.findViewById(R.id.list);
+        listView = (ListView) view.findViewById(R.id.perfilListView);
 
-        ItemPerfil itemPerfil = new ItemPerfil();
-        itemPerfil.setIcon(getActivity().getResources().getDrawable(R.mipmap.ic_launcher));
-        itemPerfil.setItem("Editar Cuenta");
+        ItemPerfil itemPerfil1 = new ItemPerfil();
+        itemPerfil1.setIcon(getActivity().getResources().getDrawable(R.mipmap.ic_launcher));
+        itemPerfil1.setItem("Editar Cuenta");
 
-        itemPerfil.setIcon(getActivity().getResources().getDrawable(R.mipmap.ic_launcher));
-        itemPerfil.setItem("Acerca");
+        ItemPerfil itemPerfil2 = new ItemPerfil();
+        itemPerfil2.setIcon(getActivity().getResources().getDrawable(R.mipmap.ic_launcher));
+        itemPerfil2.setItem("Acerca");
 
-        itemPerfil.setIcon(getActivity().getResources().getDrawable(R.mipmap.ic_launcher));
-        itemPerfil.setItem("Settings");
+        ItemPerfil itemPerfil3 = new ItemPerfil();
+        itemPerfil3.setIcon(getActivity().getResources().getDrawable(R.mipmap.ic_launcher));
+        itemPerfil3.setItem("Settings");
 
-        itemPerfil.setIcon(getActivity().getResources().getDrawable(R.mipmap.ic_launcher));
-        itemPerfil.setItem("Cerrar Sesion");
+        ItemPerfil itemPerfil4 = new ItemPerfil();
+        itemPerfil4.setIcon(getActivity().getResources().getDrawable(R.mipmap.ic_launcher));
+        itemPerfil4.setItem("Cerrar Sesion");
 
-        itemPerfils.add(itemPerfil);
+        itemPerfils.add(itemPerfil1);
+        itemPerfils.add(itemPerfil2);
+        itemPerfils.add(itemPerfil3);
+        itemPerfils.add(itemPerfil4);
 
         ListSettingsAdapter listAdapter = new ListSettingsAdapter(getActivity());
         listAdapter.adicionarItem(itemPerfils);
